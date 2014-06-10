@@ -1,0 +1,9 @@
+\begin{abstract}
+
+%In the big data era, it is very common to encounter ad hoc snapshot queries that require a fast response from many local machines in which all the data are distributed. In the scenario when the query is more complex such as multiple time series, it is not bandwidth-efficient to send the entire query, comprised of multiple time series, to all the local machines for processing. This paper aims to address this issue. We propose \MSWave{}, a bandwidth-efficient approach to processing distributed $k$NN and $k$FN queries given a reference set of multiple time series. By exploiting Wavelet transformation together with the novel distance bound designs for one-to-many time series, \MSWave{} obtains the exact results of $k$NN and $k$FN queries in a bandwidth-efficient manner. Analytical and empirical studies show that \MSWave{} outperforms the state-of-the-art methods in saving significant bandwidth usage.
+
+
+
+In M2M applications, it is very common to encounter the ad hoc snapshot query that requires fast responses from many local machines in which all the data are distributed. In the scenario when the query is more complex, the communication cost for sending it to all the local machines for processing can be very high. This paper aims to address this issue. Given a reference set of multiple and large-size patterns, we propose an approach to identifying its $k$ nearest and farthest neighbors globally across all the local machines. By decomposing the reference patterns into a multi-resolution representation and using novel distance bound designs, our method guarantees the exact results in a communication-efficient manner. Analytical and empirical studies show that our method outperforms the state-of-the-art methods in saving significant bandwidth usage, especially for large numbers of machines and large-sized reference patterns.
+
+\end{abstract}

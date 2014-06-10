@@ -1,0 +1,39 @@
+\section{Conclusions and Future Work}
+\label{sec:conclusion}
+\balance
+
+%Many believe distributed computation will become inevitable in big data era not just because we need to speed up the processing but also due to the fact that data are likely to be stored distributedly. Time series data are of no difference as they are generating in a very fast speed, usually from sensors in a Machine-to-Machine environment. As have been reported by McKinsey in a white paper about big data, a Boeing 737 generates 240 terabytes of data during a single cross-country flight. Such huge amount of time series data have to be stored in a distributed database. To efficiently handle ad hoc queries to the database, or to even design a search engine in such a distributed environment that to concurrently process large amount of complex queries while still guarantee the quality of the results without consuming too much bandwidth and transmission cost, \MSWave{} seems to be a reasonable framework to be considered.
+
+
+Distributed computation is generally believed to be a reasonable and
+inevitable solution for M2M applications. It is not only because
+huge amounts of data such as sensor readings are being accumulated fast and
+distributedly, but also because of concerns of communication efficiency among
+thousands or more devices. \MSWave{} provides the first framework for
+efficiently and correctly handling ad hoc $k$NN/$k$FN queries with multiple
+reference patterns over distributed time series data.
+
+%in M2M systems, or even to design a search engine in such a
+%distributed environment capable of concurrently processing large
+%time series queries, while still guarantee the quality of the
+%results, \MSWave{} seems to be a reasonable framework to be
+%considered.
+
+Technically speaking, compared with centralized nearest neighbor
+search for time series, distributed time-series matching has been
+studied by only a few prior works, none of which considered more
+complex query patterns such as multiple time series. Although this
+paper advances the state-of-the-art by introducing the multiple-series
+query, we believe there are still many unresolved issues to be explored.
+For example, we would like to investigate
+how to improve the response time of such queries, which is constrained by
+the current one-level-at-a-time approach; 
+% instead of sending coefficients one level at a time, how to design a more flexible
+% mechanism to transmit them considering different communication constraints; 
+how to extend the proposed distributed time series matching
+mechanism to supervised/semi-supervised learning in a distributed environment; 
+how to extend \MSWave{} to other types of distance measures such as dynamic time warping; 
+and how to resolve other types of complex queries such as ``find instances similar to at 
+least $k$ reference instances.''  These and other open questions make for promising
+directions for future work.
+

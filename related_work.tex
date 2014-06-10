@@ -1,0 +1,57 @@
+\section{Related Work}
+
+Similarity search in time series databases has drawn wide attention
+in recent years, due to its importance in many applications.
+In particular, $k$-nearest neighbor search is a well-studied topic in both
+fixed and streaming time series environments, such as the work
+in~\cite{KOU04APP,LIU03EFF,HUN06EFF,Kashyap:2011:SKS}. 
+% Gao et al.~\cite{GAO02EVA} proposed to continuously retrieve the latest
+% $L$ points of a stream as a query pattern to find the nearest
+% neighbors from a time series database via some prefetching
+% technique. 
+Given an error bound, Koudas \etal~\cite{KOU04APP}
+approximated $k$-nearest neighbors search among stream snapshots. Liu
+\etal~\cite{LIU03EFF} proposed a new indexing technique based on
+scalar quantization to provide efficient nearest-neighbor search among
+multiple streams. Hung and Chen~\cite{HUN06EFF} provided an efficient
+approach to finding the $k$-nearest neighbors under an arbitrary range
+constraint based on the Haar wavelet synopses. Kashyap \etal~\cite{Kashyap:2011:SKS} 
+proposed a scalable $k$NN search method
+for vertically stored time series. Based on a multi-resolution
+transform on time series, the $k$NN search can be done by
+progressively pruning candidates efficiently in a stepwise
+sequential-scan manner. With different indexing and approximation
+methods, the general goal is to get the $k$NN as efficiently as possible
+from a large number of candidate time series.  All these works assume that
+streams are collected and processed at a central site.
+
+There are a number of works studying issues for time series stored in a
+distributed environment, such as aggregation queries, burst detection,
+and frequent pattern mining while
+preserving privacy~\cite{Rastogi:2010:DPA,Singh:privacy,daSilva:2007:PPP}. However,
+only a few works discuss similarity search or nearest neighbor search
+for distributed time series. For example, Papadopolous and Manolopoulos~\cite{PAP01DPS}
+analyzed four schemes to tackle $k$NN queries, and our earlier work
+proposed \LeeWave{}~\cite{Yeh:2008:LLD}.
+Both studies considered only single time series as the reference for queries
+and did not address the $k$FN query problem.
+
+Other work has studied queries containing multiple instances, but in
+different settings. For example, in
+multiple pattern matching in text search or bioinformatics 
+applications~\cite{Kandhan:2010:SFS,Kim99afast}, the inputs are
+assumed to be multiple strings and the algorithms report all
+occurrences of the input strings. This is different from our goal of
+finding $k$NN/$k$FN in continuous time series while limiting
+bandwidth consumption. Meanwhile, the typical assumption of centralization
+in these settings aims to speed up the processing, in contrast to our setting
+where data are assumed to be coming from distributed sources. Furthermore, our
+unified framework allows us to handle both similarity and
+dissimilarity matching, which have been treated as two independent
+problems in most of the previous works.
+
+To the best of our knowledge, this paper is the first to deal with both $k$NN
+and $k$FN queries for a reference set of multiple time series in a
+distributed environment.
+
+%Handling queries that contains multiple instances has attracted certain level of attention in the past years. For example, the multiple pattern matching for string in text search or bioinformatics~\cite{Kandhan:2010:SFS,Kim99afast} and exemplar-based recognition and learning~\cite{}. For multiple pattern matching, the inputs are assumed to be multiple strings and the algorithms tried to report all occurrences of them efficiently. It is different from our goal in finding $k$NN/$k$FN in continuous time sequence while using small bandwidth. Furthermore, the assumption of penalization aims at speed up the process, rather as our case to assume data are coming from distributed sources. For exemplar-based learning, they assumes all patterns are similar to some extent to perform learning, while in our framework such assumption is relaxed and we consider a more challenging setup as distributed sources. Furthermore, our unified framework allows us to handle both similarity and disilarity matching all together, which have been treated as two independent problems in most of the previous works. 
